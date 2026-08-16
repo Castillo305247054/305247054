@@ -3,25 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Presentación - Marco Castillo</title>
+    <title>Marco Antonio Castillo Frías - Tarjeta Digital</title>
     <style>
         body { 
             text-align: center; 
-            font-family: Arial, sans-serif; 
-            background-color: #f4f4f4; 
-            padding: 20px; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #0f172a; 
+            padding: 20px 15px; 
             margin: 0;
+            color: #f8fafc;
         }
-        img { 
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+        }
+        /* Estilos para tu imagen PNG de datos */
+        .tarjeta-img { 
             max-width: 100%; 
             height: auto; 
-            border-radius: 12px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            border-radius: 16px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+            margin-bottom: 24px;
+            display: block;
+        }
+        /* Contenedor de Botones de Redes Sociales */
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        /* Estilos generales de botones */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.98em;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+        
+        /* Colores adaptados a cada plataforma */
+        .btn-linkedin { background-color: #0077b5; }
+        .btn-tableau { background-color: #e97627; }
+        .btn-coursera { background-color: #0056d2; }
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-github { background-color: #24292e; border: 1px solid #334155; }
+
+        /* Sección del QR */
+        .qr-section {
+            background-color: #1e293b;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border: 1px solid #334155;
+        }
+        .qr-section p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: 500;
+            font-size: 0.9em;
+            color: #94a3b8;
+        }
+        .qr-img { 
+            max-width: 160px;
+            height: auto;
+            border-radius: 8px;
+            background-color: white;
+            padding: 8px;
         }
     </style>
 </head>
 <body>
-    <!-- Cambia "tarjeta.png" por el nombre exacto de tu imagen subida -->
-    <img src="tarjet 2.png" alt="Tarjeta de Presentación">
+    <div class="container">
+        <!-- Imagen de tu tarjeta digital -->
+        <img src="tarjet 2.png" alt="Lic. Marco Antonio Castillo Frías" class="tarjeta-img">
+
+        <!-- BOTONES INTERACTIVOS A TUS PERFILES -->
+        <div class="social-buttons">
+            <a class="btn btn-linkedin" href="https://www.linkedin.com/in/marco-antonio-castillo-frias/" target="_blank">
+                💼 Perfil de LinkedIn
+            </a>
+            
+            <a class="btn btn-tableau" href="https://public.tableau.com/app/profile/marco.a.castillo.frias/vizzes" target="_blank">
+                📊 Portafolio en Tableau Public
+            </a>
+
+            <a class="btn btn-coursera" href="https://www.coursera.org/learner/305247054" target="_blank">
+                🎓 Certificaciones en Coursera
+            </a>
+
+            <a class="btn btn-instagram" href="https://www.instagram.com/marco_antonio_castillo_frias/" target="_blank">
+                📸 Instagram
+            </a>
+
+            <a class="btn btn-github" href="https://github.com/Castillo305247054" target="_blank">
+                💻 Repositorios en GitHub
+            </a>
+        </div>
+
+        <!-- SECCIÓN CÓDIGO QR -->
+        <div class="qr-section">
+            <p>Escanea este código para compartir mi tarjeta</p>
+            <!-- Asegúrate de subir la imagen de tu QR a GitHub con el nombre mi_qr.png -->
+            <img src="mi_qr.png" alt="Código QR de Contacto" class="qr-img">
+        </div>
+    </div>
 </body>
 </html>
