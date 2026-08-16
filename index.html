@@ -5,18 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Antonio Castillo Frías - Tarjeta Digital</title>
     <style>
+        /* Estilos generales del cuerpo y fondo dividido */
         body { 
             text-align: center; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            background-color: #0f172a; 
-            padding: 20px 15px; 
             margin: 0;
+            padding: 20px 15px;
             color: #f8fafc;
+            min-height: 100vh;
+            position: relative;
+            background-color: #0b132b;
         }
+
+        /* Capa de fondo dividido (Mitad izquierda UNAM, Mitad derecha Derecho) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: 
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1024px-Escudo-UNAM-escalable.svg.png'),
+                url('https://www.derecho.unam.mx/imagenes/oferta-academica/licenciatura/Escudo_FD.png');
+            background-position: left 10% center, right 10% center;
+            background-repeat: no-repeat, no-repeat;
+            background-size: 40% auto, 40% auto;
+            opacity: 0.15; /* Opacidad para no oscurecer la tarjeta */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+        }
+
+        /* Ajustes para pantallas móviles */
+        @media (max-width: 600px) {
+            body::before {
+                background-position: left -20px center, right -20px center;
+                background-size: 55% auto, 55% auto;
+                opacity: 0.12;
+            }
+        }
+
         .container {
             max-width: 420px;
             margin: 0 auto;
+            background-color: rgba(15, 23, 42, 0.85); /* Fondo translúcido para resaltar el texto */
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
+
         /* Estilos para tu imagen PNG de datos */
         .tarjeta-img { 
             max-width: 100%; 
@@ -26,6 +65,7 @@
             margin-bottom: 24px;
             display: block;
         }
+
         /* Contenedor de Botones de Redes Sociales */
         .social-buttons {
             display: flex;
@@ -33,6 +73,7 @@
             gap: 12px;
             margin-bottom: 24px;
         }
+
         /* Estilos generales de botones */
         .btn {
             display: flex;
@@ -113,7 +154,6 @@
         <!-- SECCIÓN CÓDIGO QR -->
         <div class="qr-section">
             <p>Escanea este código para compartir mi tarjeta</p>
-            <!-- Nombre exacto de tu archivo QR con su espacio -->
             <img src="QR 305247054.png" alt="Código QR de Contacto" class="qr-img">
         </div>
     </div>
