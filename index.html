@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco Antonio Castillo Frías - Tarjeta Digital</title>
     <style>
-        /* Estilos generales del cuerpo y fondo dividido */
         body { 
             text-align: center; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
@@ -15,40 +14,63 @@
             min-height: 100vh;
             position: relative;
             background-color: #0b132b;
+            overflow-x: hidden;
         }
 
-        /* Capa de fondo dividido (Mitad izquierda UNAM, Mitad derecha Derecho) */
-        body::before {
-            content: "";
+        /* Capa contenedora para el fondo rotatorio */
+        .bg-rotator {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-image: 
-                url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Escudo-UNAM-escalable.svg/1024px-Escudo-UNAM-escalable.svg.png'),
-                url('https://www.derecho.unam.mx/imagenes/oferta-academica/licenciatura/Escudo_FD.png');
-            background-position: left 10% center, right 10% center;
-            background-repeat: no-repeat, no-repeat;
-            background-size: 40% auto, 40% auto;
-            opacity: 0.15; /* Opacidad para no oscurecer la tarjeta */
-            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+            pointer-events: none;
         }
 
-        /* Ajustes para pantallas móviles */
-        @media (max-width: 600px) {
-            body::before {
-                background-position: left -20px center, right -20px center;
-                background-size: 55% auto, 55% auto;
-                opacity: 0.12;
-            }
+        /* Configuración base de cada imagen */
+        .bg-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            opacity: 0;
+            animation: rotateBg 15s infinite ease-in-out;
+        }
+
+        /* Asignación de tus imágenes reales */
+        .bg-1 {
+            background-image: url('ambos.jfif');
+            animation-delay: 0s;
+        }
+
+        .bg-2 {
+            background-image: url('escudo-y-lema-UNAM.jpg');
+            animation-delay: 5s;
+        }
+
+        .bg-3 {
+            background-image: url('unam.jpg');
+            animation-delay: 10s;
+        }
+
+        /* Transición suave Fade In / Fade Out */
+        @keyframes rotateBg {
+            0% { opacity: 0; transform: scale(0.96); }
+            10% { opacity: 0.22; transform: scale(1); }
+            30% { opacity: 0.22; transform: scale(1); }
+            40% { opacity: 0; transform: scale(1.04); }
+            100% { opacity: 0; }
         }
 
         .container {
             max-width: 420px;
             margin: 0 auto;
-            background-color: rgba(15, 23, 42, 0.85); /* Fondo translúcido para resaltar el texto */
+            background-color: rgba(15, 23, 42, 0.88); 
             padding: 20px;
             border-radius: 20px;
             backdrop-filter: blur(8px);
@@ -56,7 +78,6 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.6);
         }
 
-        /* Estilos para tu imagen PNG de datos */
         .tarjeta-img { 
             max-width: 100%; 
             height: auto; 
@@ -66,7 +87,6 @@
             display: block;
         }
 
-        /* Contenedor de Botones de Redes Sociales */
         .social-buttons {
             display: flex;
             flex-direction: column;
@@ -74,7 +94,6 @@
             margin-bottom: 24px;
         }
 
-        /* Estilos generales de botones */
         .btn {
             display: flex;
             align-items: center;
@@ -92,14 +111,12 @@
             transform: scale(0.98);
         }
         
-        /* Colores adaptados a cada plataforma */
         .btn-linkedin { background-color: #0077b5; }
         .btn-tableau { background-color: #e97627; }
         .btn-coursera { background-color: #0056d2; }
         .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         .btn-github { background-color: #24292e; border: 1px solid #334155; }
 
-        /* Sección del QR */
         .qr-section {
             background-color: #1e293b;
             padding: 20px;
@@ -124,11 +141,17 @@
     </style>
 </head>
 <body>
+
+    <!-- CONTENEDOR DE LAS 3 IMÁGENES ROTATORIAS DE FONDO -->
+    <div class="bg-rotator">
+        <div class="bg-slide bg-1"></div>
+        <div class="bg-slide bg-2"></div>
+        <div class="bg-slide bg-3"></div>
+    </div>
+
     <div class="container">
-        <!-- Imagen de tu tarjeta digital -->
         <img src="tarjet 2.png" alt="Lic. Marco Antonio Castillo Frías" class="tarjeta-img">
 
-        <!-- BOTONES INTERACTIVOS A TUS PERFILES -->
         <div class="social-buttons">
             <a class="btn btn-linkedin" href="https://www.linkedin.com/in/marco-antonio-castillo-frias/" target="_blank">
                 💼 Perfil de LinkedIn
@@ -151,7 +174,6 @@
             </a>
         </div>
 
-        <!-- SECCIÓN CÓDIGO QR -->
         <div class="qr-section">
             <p>Escanea este código para compartir mi tarjeta</p>
             <img src="QR 305247054.png" alt="Código QR de Contacto" class="qr-img">
