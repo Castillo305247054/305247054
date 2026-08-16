@@ -28,7 +28,7 @@
             pointer-events: none;
         }
 
-        /* Configuración base de cada imagen sin opacidad reducida */
+        /* Configuración base de cada imagen más grande (cover) */
         .bg-slide {
             position: absolute;
             top: 0;
@@ -37,7 +37,7 @@
             height: 100%;
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: contain;
+            background-size: cover; /* Imagen más grande abarcando toda la pantalla */
             opacity: 0;
             animation: rotateBg 15s infinite ease-in-out;
         }
@@ -58,33 +58,33 @@
             animation-delay: 10s;
         }
 
-        /* Animación con opacidad sólida (100% visible) */
+        /* Animación para rotación de imágenes sólidas */
         @keyframes rotateBg {
-            0% { opacity: 0; transform: scale(0.98); }
-            10% { opacity: 1; transform: scale(1); } /* Imagen 100% sólida */
-            30% { opacity: 1; transform: scale(1); }
-            40% { opacity: 0; transform: scale(1.02); }
+            0% { opacity: 0; transform: scale(1); }
+            10% { opacity: 1; transform: scale(1.05); }
+            30% { opacity: 1; transform: scale(1.05); }
+            40% { opacity: 0; transform: scale(1.1); }
             100% { opacity: 0; }
         }
 
-        /* Contenedor central semi-translúcido para permitir lectura perfecta */
+        /* Contenedor central totalmente transparente */
         .container {
             position: relative;
             z-index: 1;
             max-width: 420px;
             margin: 0 auto;
-            background-color: rgba(15, 23, 42, 0.88); /* Tarjeta oscura con alto contraste */
+            background: transparent; /* Total transparencia */
             padding: 20px;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
 
         .tarjeta-img { 
             max-width: 100%; 
             height: auto; 
             border-radius: 16px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6); 
             margin-bottom: 24px;
             display: block;
         }
@@ -94,6 +94,18 @@
             flex-direction: column;
             gap: 12px;
             margin-bottom: 24px;
+        }
+
+        /* Animación para que los enlaces aparezcan uno a uno */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .btn {
@@ -106,31 +118,55 @@
             border-radius: 12px;
             font-weight: 600;
             font-size: 0.98em;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             transition: transform 0.2s, opacity 0.2s;
+            opacity: 0; /* Inicio invisible para la animación */
+            animation: fadeInUp 0.6s forwards ease-out;
         }
+
         .btn:active {
             transform: scale(0.98);
         }
+
+        /* Retrasos secuenciales para que aparezcan uno tras otro */
+        .btn:nth-child(1) { animation-delay: 0.3s; }
+        .btn:nth-child(2) { animation-delay: 0.6s; }
+        .btn:nth-child(3) { animation-delay: 0.9s; }
+        .btn:nth-child(4) { animation-delay: 1.2s; }
+        .btn:nth-child(5) { animation-delay: 1.5s; }
         
-        .btn-linkedin { background-color: #0077b5; }
-        .btn-tableau { background-color: #e97627; }
-        .btn-coursera { background-color: #0056d2; }
-        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .btn-github { background-color: #24292e; }
+        .btn-linkedin { background-color: rgba(0, 119, 181, 0.9); }
+        .btn-tableau { background-color: rgba(233, 118, 39, 0.9); }
+        .btn-coursera { background-color: rgba(0, 86, 210, 0.9); }
+        .btn-instagram { background: linear-gradient(45deg, rgba(240, 148, 51, 0.9) 0%, rgba(230, 104, 60, 0.9) 25%, rgba(220, 39, 67, 0.9) 50%, rgba(204, 35, 102, 0.9) 75%, rgba(188, 24, 136, 0.9) 100%); }
+        .btn-github { background-color: rgba(36, 41, 46, 0.9); }
+
+        /* Estilos para la leyenda profesional */
+        .leyenda-profesional {
+            font-size: 0.92em;
+            line-height: 1.5;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5);
+            margin: 20px 0 24px 0;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+        }
 
         .qr-section {
-            background-color: rgba(30, 41, 59, 0.9);
-            padding: 20px;
+            background: transparent;
+            padding: 15px;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .qr-section p {
             margin-top: 0;
             margin-bottom: 12px;
             font-weight: 600;
             font-size: 0.9em;
-            color: #cbd5e1;
+            color: #ffffff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
         .qr-img { 
             max-width: 160px;
@@ -138,7 +174,7 @@
             border-radius: 8px;
             background-color: white;
             padding: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -174,6 +210,12 @@
             <a class="btn btn-github" href="https://github.com/Castillo305247054" target="_blank">
                 💻 Repositorios en GitHub
             </a>
+        </div>
+
+        <!-- LEYENDA PROFESIONAL -->
+        <div class="leyenda-profesional">
+            Director de Operaciones Legales (LegalOps) | Abogado Amparista | Data Engineer <br><br>
+            Fundador de la iniciativa para la resolución automatizada y gratuita de 1,000 casos prioritarios de Alimentos, Guarda y Custodia en Yucatán
         </div>
 
         <div class="qr-section">
