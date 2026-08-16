@@ -9,7 +9,7 @@
             text-align: center; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0;
-            padding: 20px 12px;
+            padding: 20px 15px;
             color: #1e293b;
             min-height: 100vh;
             position: relative;
@@ -17,18 +17,18 @@
             overflow-x: hidden;
         }
 
-        /* Capa de fondo fija */
+        /* Capa contenedora para el fondo rotatorio */
         .bg-rotator {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Configuración base para escritorio */
+        /* Configuración base de cada imagen */
         .bg-slide {
             position: absolute;
             top: 0;
@@ -42,6 +42,7 @@
             animation: rotateBg 15s infinite ease-in-out;
         }
 
+        /* Asignación de tus imágenes reales */
         .bg-1 {
             background-image: url('ambos.jfif');
             animation-delay: 0s;
@@ -57,44 +58,28 @@
             animation-delay: 10s;
         }
 
-        /* Animación suave */
+        /* Transición suave para fondo claro con imágenes bien visibles */
         @keyframes rotateBg {
             0% { opacity: 0; transform: scale(0.96); }
-            12% { opacity: 0.40; transform: scale(1); }
-            30% { opacity: 0.40; transform: scale(1); }
-            42% { opacity: 0; transform: scale(1.04); }
+            10% { opacity: 0.55; transform: scale(1); } /* Mayor visibilidad de las imágenes */
+            30% { opacity: 0.55; transform: scale(1); }
+            40% { opacity: 0; transform: scale(1.04); }
             100% { opacity: 0; }
         }
 
-        /* 📱 REGLAS ESPECÍFICAS PARA DISPOSITIVOS MÓVILES */
-        @media (max-width: 600px) {
-            .bg-slide {
-                background-size: 110% auto; /* Agranda la imagen para que sobresalga de la tarjeta */
-                background-position: center 15%; /* Eleva la imagen hacia la parte superior visible */
-            }
-            
-            @keyframes rotateBg {
-                0% { opacity: 0; transform: scale(0.95); }
-                12% { opacity: 0.50; transform: scale(1); } /* Más visible en pantallas pequeñas */
-                30% { opacity: 0.50; transform: scale(1); }
-                42% { opacity: 0; transform: scale(1.02); }
-                100% { opacity: 0; }
-            }
-        }
-
-        /* Contenedor principal de la tarjeta */
         .container {
             position: relative;
-            z-index: 1; /* Garantiza que la tarjeta quede por encima del fondo */
+            z-index: 1;
             max-width: 420px;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.90); 
+            /* Transparencia cristal/glassmorphism activada */
+            background-color: rgba(255, 255, 255, 0.72); 
             padding: 20px;
             border-radius: 20px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
 
         .tarjeta-img { 
@@ -137,11 +122,11 @@
         .btn-github { background-color: #24292e; }
 
         .qr-section {
-            background-color: #f1f5f9;
+            background-color: rgba(241, 245, 249, 0.85);
             padding: 20px;
             border-radius: 16px;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
         .qr-section p {
             margin-top: 0;
@@ -162,7 +147,7 @@
 </head>
 <body>
 
-    <!-- FONDO ROTATORIO -->
+    <!-- FONDO ROTATORIO DE ESCUDOS -->
     <div class="bg-rotator">
         <div class="bg-slide bg-1"></div>
         <div class="bg-slide bg-2"></div>
