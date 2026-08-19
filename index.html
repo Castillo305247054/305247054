@@ -108,6 +108,12 @@
             }
         }
 
+        /* NUEVA ANIMACIÓN: Difuminación pura (Fade In) para la información */
+        @keyframes fadeInPure {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .btn {
             display: flex;
             align-items: center;
@@ -128,26 +134,25 @@
             transform: scale(0.98);
         }
 
-        /* Retrasos secuenciales para las animaciones de los botones visibles actuales */
-        .btn:nth-child(1) { animation-delay: 0.3s; }
-        .btn:nth-child(2) { animation-delay: 0.6s; }
-        .btn:nth-child(3) { animation-delay: 0.9s; }
-        .btn:nth-child(4) { animation-delay: 1.2s; }
-        .btn:nth-child(5) { animation-delay: 1.5s; }
+        /* Retrasos secuenciales para las animaciones de los botones */
+        .btn:nth-child(1) { animation-delay: 0.6s; } /* Sincronizado para salir después de la info */
+        .btn:nth-child(2) { animation-delay: 0.9s; }
+        .btn:nth-child(3) { animation-delay: 1.2s; }
+        .btn:nth-child(4) { animation-delay: 1.5s; }
+        .btn:nth-child(5) { animation-delay: 1.8s; }
         
-        .btn-whatsapp { background-color: rgba(37, 211, 102, 0.95); } /* Color Oficial WhatsApp */
+        .btn-whatsapp { background-color: rgba(37, 211, 102, 0.95); } 
         .btn-linkedin { background-color: rgba(0, 119, 181, 0.9); }
         .btn-tableau { background-color: rgba(233, 118, 39, 0.9); }
         .btn-coursera { background-color: rgba(0, 86, 210, 0.9); }
         .btn-instagram { background: linear-gradient(45deg, rgba(240, 148, 51, 0.9) 0%, rgba(230, 104, 60, 0.9) 25%, rgba(220, 39, 67, 0.9) 50%, rgba(204, 35, 102, 0.9) 75%, rgba(188, 24, 136, 0.9) 100%); }
         .btn-github { background-color: rgba(36, 41, 46, 0.9); }
 
-        /* Clase CSS para ocultar elementos sin borrarlos del código HTML */
         .hidden {
             display: none !important;
         }
 
-        /* Estilos para la leyenda profesional */
+        /* Estilos actualizados para la leyenda profesional con animación Fade */
         .leyenda-profesional {
             font-size: 0.92em;
             line-height: 1.5;
@@ -159,6 +164,11 @@
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(4px);
+            
+            /* Ajustes para la aparición progresiva */
+            opacity: 0;
+            animation: fadeInPure 1.2s forwards ease-in-out;
+            animation-delay: 0.2s; /* Aparece casi inmediatamente de forma suave */
         }
 
         .qr-section {
@@ -196,14 +206,14 @@
     <div class="container">
         <img src="tarjet 2.png" alt="Lic. Marco Antonio Castillo Frías" class="tarjeta-img">
 
-        <!-- LEYENDA PROFESIONAL -->
+        <!-- LEYENDA PROFESIONAL (Con animación fade-in progresiva) -->
         <div class="leyenda-profesional">
             Director de Operaciones Legales (LegalOps) | Abogado Amparista | Data Engineer <br><br>
             Fundador de la iniciativa para la resolución automatizada y gratuita de 1,000 casos prioritarios de Alimentos, Guarda y Custodia en Yucatán
         </div>
 
         <div class="social-buttons">
-            <!-- BOTÓN DE WHATSAPP -->
+        <!-- BOTÓN DE WHATSAPP CONFIGURADO CORRECTAMENTE A TU NÚMERO -->
             <a class="btn btn-whatsapp" href="https://whatsapp.com" target="_blank">
                 💬 Contactar por WhatsApp
             </a>
@@ -224,7 +234,7 @@
                 📸 Instagram
             </a>
 
-            <!-- BOTÓN DE GITHUB (OCULTO TEMPORALMENTE CON LA CLASE .hidden) -->
+            <!-- BOTÓN DE GITHUB (OCULTO) -->
             <a class="btn btn-github hidden" href="https://github.com" target="_blank">
                 💻 Repositorios en GitHub
             </a>
