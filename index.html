@@ -3,7 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marco Antonio Castillo Frías - Tarjeta Digital</title>
+    
+    <!-- TÍTULO OPTIMIZADO PARA GOOGLE -->
+    <title>Marco Antonio Castillo Frías | LegalOps, Abogado y Data Engineer</title>
+    
+    <!-- DESCRIPCIÓN QUE APARECERÁ ABAJO DE TU ENLACE EN GOOGLE -->
+    <meta name="description" content="Perfil profesional de Marco Antonio Castillo Frías. Especialista en Operaciones Legales (LegalOps), Abogado Amparista y analista de datos de la UNAM en Yucatán.">
+    
+    <!-- PALABRAS CLAVE INTERNAS -->
+    <meta name="keywords" content="Marco Antonio Castillo Frias, Marco Castillo, LegalOps, Abogado Amparista, Data Engineer, UNAM, Yucatan, Amparos Alimentos">
+
+    <!-- DATOS ESTRUCTURADOS (SCHEMA MARKUP) PARA QUE GOOGLE ASOCIE TU WEB CON TUS REDES -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Marco Antonio Castillo Frías",
+      "alternateName": ["Marco Castillo", "Lic. Marco Antonio Castillo Frías", "Marco A. Castillo Frías"],
+      "url": "https://github.io",
+      "jobTitle": "Director de Operaciones Legales y Abogado Amparista",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Universidad Nacional Autónoma de México"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/marco-antonio-castillo-frias/",
+        "https://public.tableau.com/app/profile/marco.a.castillo.frias/vizzes",
+        "https://www.instagram.com/marco_antonio_castillo_frias/",
+        "https://www.coursera.org/learner/305247054"
+      ]
+    }
+    </script>
+
     <style>
         body { 
             text-align: center; 
@@ -78,6 +109,18 @@
             border-radius: 20px;
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
+        }
+
+        /* Título invisible para usuarios pero de máxima prioridad para Google */
+        .seo-title {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
         }
 
         .tarjeta-img { 
@@ -194,22 +237,26 @@
     </div>
 
     <div class="container">
+        <!-- ESTO LE DICE DIRECTAMENTE A GOOGLE QUIÉN ERES EN ETIQUETA H1 (MÁXIMO RANGO SEO) -->
+        <h1 class="seo-title">Marco Antonio Castillo Frías</h1>
+
         <img src="tarjet 2.png" alt="Lic. Marco Antonio Castillo Frías" class="tarjeta-img">
 
         <!-- LEYENDA PROFESIONAL (Movido antes de los enlaces) -->
         <div class="leyenda-profesional">
+            <strong>Lic. Marco Antonio Castillo Frías</strong><br>
             Director de Operaciones Legales (LegalOps) | Abogado Amparista | Data Engineer <br><br>
             Fundador de la iniciativa para la resolución automatizada y gratuita de 1,000 Amparos a nivel nacional en 10 tipos de leguas para resolver casos prioritarios de Alimentos, Guarda y Custodia en Yucatán
         </div>
 
         <div class="social-buttons">
             <!-- BOTÓN DE WHATSAPP CON ENLACE DIRECTO CORREGIDO -->
-            <a class="btn btn-whatsapp" href="https://whatsapp.com" target="_blank">
+            <a class="btn btn-whatsapp" href="https://wa.me" target="_blank">
                 💬 Contactar por WhatsApp 55 47 14 92 29
             </a>
 
             <a class="btn btn-linkedin" href="https://www.linkedin.com/in/marco-antonio-castillo-frias/" target="_blank">
-                💼 Perfil de LinkedIn
+                💼 Perfil de LinkedIn - Marco Castillo
             </a>
             
             <a class="btn btn-tableau" href="https://public.tableau.com/app/profile/marco.a.castillo.frias/vizzes" target="_blank">
@@ -221,19 +268,7 @@
             </a>
 
             <a class="btn btn-instagram" href="https://www.instagram.com/marco_antonio_castillo_frias/" target="_blank">
-                📸 Instagram
+                📸 Instagram Oficial
             </a>
 
             <!-- BOTÓN DE GITHUB OCULTO TEMPORALMENTE CON LA CLASE hidden -->
-            <a class="btn btn-github hidden" href="https://github.com/Castillo305247054" target="_blank">
-                💻 Repositorios en GitHub
-            </a>
-        </div>
-
-        <div class="qr-section">
-            <p>Escanea este código para compartir mi tarjeta</p>
-            <img src="QR 305247054.png" alt="Código QR de Contacto" class="qr-img">
-        </div>
-    </div>
-</body>
-</html>
