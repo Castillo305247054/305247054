@@ -13,7 +13,7 @@
     <!-- PALABRAS CLAVE INTERNAS -->
     <meta name="keywords" content="Marco Antonio Castillo Frias, Marco Castillo, LegalOps, Abogado Amparista, Data Engineer, UNAM, Yucatan, Amparos Alimentos">
 
-    <!-- DATOS ESTRUCTURADOS (SCHEMA MARKUP) PARA QUE GOOGLE ASOCIE TU WEB CON TUS REDES -->
+    <!-- DATOS ESTRUCTURADOS (SCHEMA MARKUP) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -59,7 +59,7 @@
             pointer-events: none;
         }
 
-        /* Configuración base de cada imagen más grande (cover) */
+        /* Configuración base de cada imagen */
         .bg-slide {
             position: absolute;
             top: 0;
@@ -68,7 +68,7 @@
             height: 100%;
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: cover; /* Imagen más grande abarcando toda la pantalla */
+            background-size: cover;
             opacity: 0;
             animation: rotateBg 15s infinite ease-in-out;
         }
@@ -89,7 +89,7 @@
             animation-delay: 10s;
         }
 
-        /* Animación para rotación de imágenes sólidas */
+        /* Animación para rotación */
         @keyframes rotateBg {
             0% { opacity: 0; transform: scale(1); }
             10% { opacity: 1; transform: scale(1.05); }
@@ -98,20 +98,20 @@
             100% { opacity: 0; }
         }
 
-        /* Contenedor central totalmente transparente */
+        /* Contenedor central */
         .container {
             position: relative;
             z-index: 1;
             max-width: 420px;
             margin: 0 auto;
-            background: transparent; /* Total transparencia */
+            background: transparent;
             padding: 20px;
             border-radius: 20px;
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
         }
 
-        /* Título invisible para usuarios pero de máxima prioridad para Google */
+        /* Título invisible para prioridad SEO */
         .seo-title {
             position: absolute;
             width: 1px;
@@ -139,7 +139,7 @@
             margin-bottom: 24px;
         }
 
-        /* Animación para que los enlaces aparezcan uno a uno */
+        /* Animación secuencial */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -163,7 +163,7 @@
             font-size: 0.98em;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             transition: transform 0.2s, opacity 0.2s;
-            opacity: 0; /* Inicio invisible para la animación */
+            opacity: 0;
             animation: fadeInUp 0.6s forwards ease-out;
         }
 
@@ -171,7 +171,6 @@
             transform: scale(0.98);
         }
 
-        /* Retrasos secuenciales para que aparezcan uno tras otro */
         .btn:nth-child(1) { animation-delay: 0.3s; }
         .btn:nth-child(2) { animation-delay: 0.6s; }
         .btn:nth-child(3) { animation-delay: 0.9s; }
@@ -185,18 +184,16 @@
         .btn-instagram { background: linear-gradient(45deg, rgba(240, 148, 51, 0.9) 0%, rgba(230, 104, 60, 0.9) 25%, rgba(220, 39, 67, 0.9) 50%, rgba(204, 35, 102, 0.9) 75%, rgba(188, 24, 136, 0.9) 100%); }
         .btn-github { background-color: rgba(36, 41, 46, 0.9); }
 
-        /* Clase CSS para ocultar elementos sin borrarlos del código HTML */
         .hidden {
             display: none !important;
         }
 
-        /* Estilos para la leyenda profesional */
         .leyenda-profesional {
             font-size: 0.92em;
             line-height: 1.5;
             color: #ffffff;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0,0,0,0.5);
-            margin: 0 0 24px 0; /* Ajustado el margen superior para mejor simetría */
+            margin: 0 0 24px 0;
             padding: 15px;
             background: rgba(0, 0, 0, 0.4);
             border-radius: 12px;
@@ -237,21 +234,21 @@
     </div>
 
     <div class="container">
-        <!-- ESTO LE DICE DIRECTAMENTE A GOOGLE QUIÉN ERES EN ETIQUETA H1 (MÁXIMO RANGO SEO) -->
+        <!-- ETIQUETA H1 DE MÁXIMA PRIORIDAD SEO -->
         <h1 class="seo-title">Marco Antonio Castillo Frías</h1>
 
         <img src="tarjet 2.png" alt="Lic. Marco Antonio Castillo Frías" class="tarjeta-img">
 
-        <!-- LEYENDA PROFESIONAL (Movido antes de los enlaces) -->
+        <!-- LEYENDA PROFESIONAL -->
         <div class="leyenda-profesional">
             <strong>Lic. Marco Antonio Castillo Frías</strong><br>
             Director de Operaciones Legales (LegalOps) | Abogado Amparista | Data Engineer <br><br>
-            Fundador de la iniciativa para la resolución automatizada y gratuita de 1,000 Amparos a nivel nacional en 10 tipos de leguas para resolver casos prioritarios de Alimentos, Guarda y Custodia en Yucatán
+            Fundador de la iniciativa para la resolución automatizada y gratuita de 1,000 Amparos a nivel nacional en 10 tipos de lenguas para resolver casos prioritarios de Alimentos, Guarda y Custodia en Yucatán.
         </div>
 
         <div class="social-buttons">
-            <!-- BOTÓN DE WHATSAPP CON ENLACE DIRECTO CORREGIDO -->
-            <a class="btn btn-whatsapp" href="https://wa.me" target="_blank">
+            <!-- BOTÓN DE WHATSAPP -->
+            <a class="btn btn-whatsapp" href="https://wa.me/525547149229" target="_blank">
                 💬 Contactar por WhatsApp 55 47 14 92 29
             </a>
 
@@ -271,10 +268,14 @@
                 📸 Instagram Oficial
             </a>
 
-            <!-- BOTÓN DE GITHUB OCULTO TEMPORALMENTE CON LA CLASE hidden -->
+            <!-- BOTÓN DE GITHUB (OCULTO) -->
             <a class="btn btn-github hidden" href="https://github.com/Castillo305247054" target="_blank">
                 💻 Repositorios en GitHub
-            <div class="qr-section">
+            </a>
+        </div>
+
+        <!-- SECCIÓN DE CÓDIGO QR -->
+        <div class="qr-section">
             <p>Escanea este código para compartir la tarjeta de Marco Antonio Castillo Frías</p>
             <img src="QR 305247054.png" alt="Código QR de Marco Antonio Castillo Frías" class="qr-img">
         </div>
