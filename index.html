@@ -71,7 +71,7 @@
         }
 
         /* Configuración base de cada imagen */
-        .bg-slide {
+       .bg-slide {
             position: absolute;
             top: 0;
             left: 0;
@@ -81,23 +81,25 @@
             background-position: center center;
             background-size: cover;
             opacity: 0;
-            animation: rotateBg 15s infinite ease-in-out;
+            animation: rotateBg 25s infinite ease-in-out;
         }
 
-        /* Asignación de imágenes */
-        .bg-1 {
-            background-image: url('go.png');
-            animation-delay: 0s;
-        }
+        /* Asignación de imágenes al carrusel */
+        .bg-1 { background-image: url('go.png'); animation-delay: 0s; }
+        .bg-2 { background-image: url('GIT-AGUILA-UNAM.jpeg'); animation-delay: 5s; }
+        .bg-3 { background-image: url('GIT-INCAM.jpeg'); animation-delay: 10s; }
+        .bg-4 { background-image: url('GIT-PALACIO.jpeg'); animation-delay: 15s; }
+        .bg-5 { background-image: url('GIT-PALACIO-PUERTA.jpeg'); animation-delay: 20s; }
 
-                /* Animación para rotación */
+        /* Animación para rotación suave con desvanecimiento */
         @keyframes rotateBg {
             0% { opacity: 0; transform: scale(1); }
-            10% { opacity: 1; transform: scale(1.05); }
-            30% { opacity: 1; transform: scale(1.05); }
-            40% { opacity: 0; transform: scale(1.1); }
+            5% { opacity: 1; transform: scale(1.02); }
+            20% { opacity: 1; transform: scale(1.05); }
+            25% { opacity: 0; transform: scale(1.08); }
             100% { opacity: 0; }
         }
+
 
         /* Contenedor central */
         .container {
@@ -232,6 +234,8 @@
         <div class="bg-slide bg-1"></div>
         <div class="bg-slide bg-2"></div>
         <div class="bg-slide bg-3"></div>
+        <div class="bg-slide bg-4"></div>
+        <div class="bg-slide bg-5"></div>
     </div>
 
     <div class="container">
